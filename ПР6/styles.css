@@ -1,0 +1,147 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87ceeb, #b0e0e6); /* Небо */
+}
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    box-shadow: -20px 20px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud-1 {
+    width: 200px;
+    height: 100px;
+    top: 20%;
+    left: 0px; 
+    animation: moveClouds 8s linear infinite;
+}
+
+.cloud-1::before {
+    width: 100px;
+    height: 100px;
+    top: -50px;
+    left: 30px;
+}
+
+.cloud-1::after {
+    width: 150px;
+    height: 80px;
+    top: 10px;
+    left: 120px;
+}
+
+.cloud-2 {
+    width: 250px;
+    height: 120px;
+    top: 40%;
+    left: -300px;
+    animation: moveClouds 10s linear infinite;
+}
+
+.cloud-2::before {
+    width: 120px;
+    height: 120px;
+    top: -60px;
+    left: 40px;
+}
+
+.cloud-2::after {
+    width: 180px;
+    height: 90px;
+    top: 20px;
+    left: 140px;
+}
+
+.cloud-3 {
+    width: 180px;
+    height: 90px;
+    top: 60%;
+    left: -220px;
+    animation: moveClouds 8s linear infinite;
+}
+
+.cloud-3::before {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    left: 20px;
+}
+
+.cloud-3::after {
+    width: 120px;
+    height: 60px;
+    top: 15px;
+    left: 100px;
+}
+
+.cloud-4 {
+    width: 220px;
+    height: 110px;
+    top: 80%;
+    left: -260px;
+    animation: moveClouds 9s linear infinite;
+}
+
+.cloud-4::before {
+    width: 90px;
+    height: 90px;
+    top: -45px;
+    left: 25px;
+}
+
+.cloud-4::after {
+    width: 140px;
+    height: 70px;
+    top: 20px;
+    left: 120px;
+}
+
+@keyframes moveClouds {
+    from {
+        transform: translateX(50%); /* Починаємо зліва за межами екрану */
+    }
+    to {
+        transform: translateX(800%); /* Рухаємось за межі правої сторони екрану */
+    }
+}
+
+@keyframes flyBird {
+    0% {
+        transform: translateX(0vw); /* Начало справа за пределами экрана */
+    }
+    100% {
+        transform: translateX(1500px); /* Конец слева (переходит за пределы экрана) */
+    }
+}
+.bird {
+    position: absolute;
+    top: 30%; /* Відносна висота птаха */
+    left: -10px; /* Початкове розташування за екраном */
+    animation: flyBird 10s linear infinite; /* Анімація польоту */
+}
+
+.bird img {
+    width: 80px; /* Розмір птаха */
+    height: auto;
+}
